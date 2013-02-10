@@ -21,6 +21,11 @@ body
 	width: 297px;
 	margin: 0px auto;
 }
+#table td
+{
+	width: 33px;
+	height: 33px;
+}
 #toolBar
 {
 	background-color: lightblue;
