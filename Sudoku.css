@@ -1,0 +1,26 @@
+body
+{
+	background-color: lightgrey;
+}
+#titleBar
+{
+	border: 2px solid black;
+	width: 80%;
+	margin: 5% auto;
+	text-align: center;
+	font-family: monospace;
+}
+#table
+{
+	border: 2px solid black;
+	height: 297px;
+	width: 297px;
+	margin: 0px auto;
+}
+#toolBar
+{
+	border: 2px solid black;
+	width: 50%;
+	height: 100px;
+	margin: 5% auto;
+}
