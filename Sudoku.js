@@ -4,14 +4,14 @@
 function sudokuTable(){
 	this.activeTable = new Array(9);
 	this.solvedTable = new Array(9);
-	defaultTable = "040031069007000045030400000200000670800000003075000002000004080690000700720610090";
-	solvedTable = "";
+	this.defaultTable = "040031069007000045030400000200000670800000003075000002000004080690000700720610090";
+	this.solution = "";
 }
 
 /* 
 	Generates the activeTable array as well as the solvedTable array
 	
-	! Need to add in the solvedTable code
+	! Need to add in the solvedTable code populated from solution
 */
 sudokuTable.prototype.popTable = function (){
 	var i = 0;
@@ -19,9 +19,9 @@ sudokuTable.prototype.popTable = function (){
 	
 	for (i = 0; i < 81; i++){
 		if (i % nine == 0){
-			this.activeTable[i%nine] = new Array(9);
+			this.activeTable[parseInt(i/nine)] = new Array(9);
 		}
-		this.activeTable[parseInt(i/nine)][i%nine] = parseInt(defaultTable[i]);
+		this.activeTable[parseInt(i/nine)][i%nine] = parseInt(this.defaultTable[i]);
 	}
 }
 
@@ -31,9 +31,8 @@ sudokuTable.prototype.popTable = function (){
 function main(){
 	var gameBoard = document.getElementById('table');
 	gameTable = new sudokuTable;
-	
-	gameBoard.innerHTML = tableGen;
-	
+	gameTable.popTable();
+	gameBoard.innerHTML = tableGen();
 }
 
 /* 
@@ -49,7 +48,15 @@ function tableGen(){
 	/* Populate the table with the defaultTable */
 	var html = "<table>";
 	
-	var html += "</table";
+	for(i = 0; i < nine; i++){
+		html += "<tr>";
+		for( k = 0; k < nine; k++){
+			html += "<td>" + parseInt(gameTable.activeTable[i][k]) + "</td>";
+		}
+		html += "</tr>";
+	}
+	
+	html += "</table>";
 	
 	return html;
 }

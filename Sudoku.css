@@ -15,16 +15,27 @@ body
 #table
 {
 	background-color: white;
-	border: 5px solid black;
-	border-radius: 10px;
-	height: 297px;
+	border: 2px solid black;
 	width: 297px;
+	height: 297px;
 	margin: 0px auto;
+}
+table
+{
+	border-collapse: collapse;
+	border: 1px solid black;
+	float: left;
 }
 #table td
 {
+	border: 1px solid black;
+	text-align: center;
 	width: 33px;
-	height: 33px;
+	height:30px;
+}
+#table tr
+{
+	border: 1px solid black;
 }
 #toolBar
 {
