@@ -33,6 +33,7 @@ function main(){
 	gameTable = new sudokuTable;
 	gameTable.popTable();
 	gameBoard.innerHTML = tableGen();
+	addEvents();
 }
 
 /* 
@@ -70,6 +71,12 @@ function tableGen(){
 	Add Events for onclick in table
 */
 function addEvents(){
-	var table = document.getElementsByTagName('table');
+	var space = document.getElementsByTagName('td');
+	pop = document.getElementById('popup');
 	
+	for( var i = 0; i < space.length; i++){
+		space[i].onclick = function(){
+			
+		}
+	}
 }
