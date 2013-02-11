@@ -51,7 +51,12 @@ function tableGen(){
 	for(i = 0; i < nine; i++){
 		html += "<tr>";
 		for( k = 0; k < nine; k++){
-			html += "<td>" + parseInt(gameTable.activeTable[i][k]) + "</td>";
+			if(parseInt(gameTable.activeTable[i][k]) == 0){
+				html += "<td></td>";
+			}
+			else{
+				html += "<td>" + parseInt(gameTable.activeTable[i][k]) + "</td>";
+			}
 		}
 		html += "</tr>";
 	}
@@ -59,4 +64,12 @@ function tableGen(){
 	html += "</table>";
 	
 	return html;
+}
+
+/*
+	Add Events for onclick in table
+*/
+function addEvents(){
+	var table = document.getElementsByTagName('table');
+	
 }
